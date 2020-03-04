@@ -9,7 +9,7 @@ import './SimpleRedux.css';
 class SimpleRedux extends Component {
     constructor(props) {
         super(props);
-        this.handleAddIten = this.handleAddIten.bind(this);
+        // this.handleAddIten = this.handleAddIten.bind(this);
         this.state = {
             inputText: ""
         }
@@ -32,6 +32,7 @@ class SimpleRedux extends Component {
 
     render() {
         const { inputText } = this.state;
+        const { numItens } = this.props;
 
         return (
             <div id="container">
@@ -49,7 +50,7 @@ class SimpleRedux extends Component {
 
                     <div>
                         <h2>Number Itens</h2>
-                        
+                        {numItens}
                     </div>
             </div>
 
@@ -57,4 +58,7 @@ class SimpleRedux extends Component {
         );
     }
 }
-export default connect()(SimpleRedux);
+const mapStateToProps = store => ({
+    numItens: store.itens.length
+});
+export default connect(mapStateToProps)(SimpleRedux);
