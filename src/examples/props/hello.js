@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class Hello extends Component {
 
+    static defaultProps = {
+        name: "Name Default"
+    }
+    
     render(){
 
         const {name} = this.props;

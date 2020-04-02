@@ -1,0 +1,8 @@
+#container {
+    display: flex;   
+}
+
+li {
+    list-style: square;
+}
+
